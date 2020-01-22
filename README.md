@@ -22,3 +22,7 @@ Full feature list:
 - Automatically save tasks to tasks_save.data (overwriting) when exiting the script using 'q'.
 
 Task sorting by deadline is not implemented, because the deadline field can be any possible string. 
+
+Further extensibility:
+
+Add command line arguments for quicker usage (e.g `python to_do.py -view` or `python to_do.py -delete all`)
