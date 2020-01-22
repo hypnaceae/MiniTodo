@@ -143,27 +143,27 @@ if __name__ == "__main__":
         if menu.lower() == "help" or menu.lower() == "h":
             print("\n--- USER GUIDE ---\n"
                   "this menu: help or h\n"
-                  "view tasks: v\n"
-                  "add new task: a\n"
-                  "edit task: e\n"
-                  "delete task(s): d\n"
-                  "save & quit: q\n\n"
+                  "view tasks: view or v\n"
+                  "add new task: add or a\n"
+                  "edit task: edit or e\n"
+                  "delete task(s): delete or d\n"
+                  "save & quit: quit or q\n\n"
                   "a note on saving and loading: tasks are automatically loaded\n"
                   "from tasks_save.txt on start if file exists in the same directory.\n"
                   "saving is only performed when you quit using the above command.\n"
                   "--- --- -- --- ---\n")
 
         # list all tasks
-        elif menu.lower() == "v":
+        elif menu.lower() == "v" or menu.lower() == "view":
             all_tasks.list_tasks()
 
         # adding an entry
-        elif menu.lower() == "a":
+        elif menu.lower() == "a" or menu.lower() == "add":
             all_tasks.add_task()
             print("Task added.")
 
         # deleting entries
-        elif menu.lower() == "d":
+        elif menu.lower() == "d" or menu.lower() == "delete":
             # go back to menu if user has no tasks in list
             if all_tasks.list_tasks() is None:
                 continue
@@ -199,7 +199,7 @@ if __name__ == "__main__":
                     print(e, "\n Error occurred when deleting.")
 
         # editing an entry
-        elif menu.lower() == 'e':
+        elif menu.lower() == 'e' or menu.lower() == "edit":
 
             # go back to menu if user has no tasks in list
             if all_tasks.list_tasks() is None:
@@ -234,7 +234,7 @@ if __name__ == "__main__":
                     print("Finished editing.")
 
         # save and quit
-        elif menu.format() == 'q':
+        elif menu.lower() == 'q' or menu.lower() == "quit":
 
             open('./tasks_save.data', 'wb').close()
             savefile = './tasks_save.data'
