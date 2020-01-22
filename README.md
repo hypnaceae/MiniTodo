@@ -1,4 +1,4 @@
-# project
+# MiniTodo
 
 MiniTodo is a very simple command line input to-do list. 
 On running the script, you can enter the following commands:
