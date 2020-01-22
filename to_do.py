@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 # simple object-oriented to do list program
-# maldoror on github
-# MIT license
+# chants-de-maldoror on github
 
 import pickle
 
@@ -23,8 +22,9 @@ class Entry:
         return self.completed
 
     def set_name(self):
+        # enable user to edit to-do list entry
         new_name_input = ""
-        while new_name_input == "":
+        while new_name_input == "":  # while loop to make sure user actually inputs something
             new_name_input = input("Set new name:\n")
             self.name = new_name_input
 
@@ -52,23 +52,22 @@ class Entry:
 
 
 class EntriesList:
+    # save the entries list as an object, so we can define custom functions
     def __init__(self):
         self.tasks_list = []
 
     def add_task(self):
         new_task = Entry()
-
         user_name_input = None
         while user_name_input is None:
             user_name_input = input("Enter task name, do not leave blank:\n")
             new_task.name = user_name_input
         new_task.deadline = input("Enter task deadline, or leave blank:\n")
         new_task.completed = False
-
         self.tasks_list.append(new_task)
 
     def get_task(self, index):
-
+        # return the object at a given index of the list
         try:
             for i, entry in enumerate(self.tasks_list):
                 if 0 <= index <= len(self.tasks_list):
@@ -82,13 +81,13 @@ class EntriesList:
             print("Please enter an integer.")
 
     def format_task(self, index):
-
+        # tedious formatting for task view
         try:
             for i, entry in enumerate(self.tasks_list):
                 if 0 <= index <= len(self.tasks_list):
                     if i == index:
                         if entry.get_deadline() != "":
-                            if not entry.get_completed():
+                            if not entry.get_completed(): # indexes are plus one for more natural counting
                                 return "[{0}] {1} -- {2} -- Not done!".format(index + 1, entry.get_name(),
                                                                               entry.get_deadline())
                             else:
@@ -102,13 +101,14 @@ class EntriesList:
                     else:
                         continue
                 else:
+                    # this won't happen
                     print("Could not find that entry.")
 
         except ValueError:
             print("Please enter an integer.")
 
     def list_tasks(self):
-
+        # simply print the tasks, passed through the formatting function above
         if len(self.tasks_list) != 0:
             for index, tasks in enumerate(self.tasks_list):
                 print(self.format_task(index))
@@ -168,14 +168,14 @@ if __name__ == "__main__":
             if all_tasks.list_tasks() is None:
                 continue
 
-            # figure out the task to delete, delete that task / or delete all tasks
+            # figure out the task to delete, delete that task
             task_to_delete = None
             while task_to_delete is None:
                 try:
                     delete_input = input("Please enter the number of the task to delete.\nOr enter 'all' "
                                          "to delete all tasks.\n")
                     if delete_input.isdigit():
-                        task_to_delete = all_tasks.get_task(int(delete_input) - 1)
+                        task_to_delete = all_tasks.get_task(int(delete_input) - 1)  # minus one because we did plus one
                         print("Deleting:", all_tasks.format_task(int(delete_input) - 1))
                         for entry in all_tasks.tasks_list:
                             if entry == task_to_delete:
