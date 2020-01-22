@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # simple object-oriented to do list program
-# chants-de-maldoror on github
+# GNU GPLv3
 
 import pickle
 
