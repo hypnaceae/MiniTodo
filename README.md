@@ -1,6 +1,7 @@
 # MiniTodo
 
-MiniTodo is a very simple command line input to-do list. 
+MiniTodo is a very simple command line input to-do list written in Python. 
+
 On running the script, you can enter the following commands:
 
 - *help* or *h* to open user guide
