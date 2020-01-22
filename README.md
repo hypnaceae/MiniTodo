@@ -4,11 +4,11 @@ MiniTodo is a very simple command line input to-do list.
 On running the script, you can enter the following commands:
 
 - *help* or *h* to open user guide
-- *v* to view to-do list
-- *a* to add a new to-do task
-- *e* to edit a task
-- *d* to delete a task
-- *q* to save and quit
+- *view* or *v* to view to-do list
+- *add* or *a* to add a new to-do task
+- *edit* or *e* to edit a task
+- *delete* or *d* to delete a task
+- *quit* or *q* to save and quit
 
 All your entries are automatically pickled and saved into tasks_save.data, located in the same directory as to_do.py.
 
