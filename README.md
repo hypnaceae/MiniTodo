@@ -19,7 +19,7 @@ Full feature list:
 - Delete a single task, or all tasks at once
 - Store tasks in order of creation
 - Automatically load tasks from tasks_save.data (if exists) on running the script
-- Automatically save tasks to tasks_save.data (overwriting) when exiting the script using 'q'.
+- Automatically save tasks to tasks_save.data (overwriting) when properly exiting the script
 
 Task sorting by deadline is not implemented, because the deadline field can be any possible string. 
 
