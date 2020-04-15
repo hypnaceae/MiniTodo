@@ -1,6 +1,6 @@
 # MiniTodo
 
-MiniTodo is a very simple command line input to-do list written in Python. 
+MiniTodo is a very simple CLI to-do list written in Python. 
 
 On running the script, you can enter the following commands:
 
