@@ -25,4 +25,4 @@ Task sorting by deadline is not implemented, because the deadline field can be a
 
 Further extensibility/TODO:
 
-Add command line arguments for quicker usage (e.g `python to_do.py -view` or `python to_do.py -delete all`)
+Add command line arguments for quicker usage (e.g `python to_do.py --view` or `python to_do.py --delete_all`)
